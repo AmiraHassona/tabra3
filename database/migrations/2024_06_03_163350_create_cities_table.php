@@ -2,6 +2,8 @@
 
 use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
+use Illuminate\Support\Facades\Schema;
+
 
 class CreateCitiesTable extends Migration {
 
@@ -9,9 +11,9 @@ class CreateCitiesTable extends Migration {
 	{
 		Schema::create('cities', function(Blueprint $table) {
 			$table->increments('id');
-			$table->timestamps();
 			$table->string('name');
 			$table->integer('governorate_id')->unsigned();
+			$table->timestamps();
 		});
 	}
 

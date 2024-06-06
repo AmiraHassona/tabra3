@@ -2,6 +2,8 @@
 
 use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
+use Illuminate\Support\Facades\Schema;
+
 
 class CreateBloodTypesTable extends Migration {
 
@@ -9,8 +11,8 @@ class CreateBloodTypesTable extends Migration {
 	{
 		Schema::create('blood_types', function(Blueprint $table) {
 			$table->increments('id');
-			$table->timestamps();
 			$table->string('name');
+			$table->timestamps();
 		});
 	}
 

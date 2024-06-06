@@ -2,6 +2,7 @@
 
 use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
+use Illuminate\Support\Facades\Schema;
 
 class CreateClientsTable extends Migration {
 
@@ -9,7 +10,6 @@ class CreateClientsTable extends Migration {
 	{
 		Schema::create('clients', function(Blueprint $table) {
 			$table->increments('id');
-			$table->timestamps();
 			$table->string('name');
 			$table->string('password');
 			$table->string('email');
@@ -19,6 +19,8 @@ class CreateClientsTable extends Migration {
 			$table->date('last_donation_date');
 			$table->integer('city_id')->unsigned();
 			$table->string('pin_code');
+			$table->string('api_token',60)->unique()->nullable();
+			$table->timestamps();
 		});
 	}
 

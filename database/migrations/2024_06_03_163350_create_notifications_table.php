@@ -2,6 +2,8 @@
 
 use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
+use Illuminate\Support\Facades\Schema;
+
 
 class CreateNotificationsTable extends Migration {
 
@@ -9,10 +11,10 @@ class CreateNotificationsTable extends Migration {
 	{
 		Schema::create('notifications', function(Blueprint $table) {
 			$table->increments('id');
-			$table->timestamps();
 			$table->text('title');
 			$table->longText('content');
 			$table->integer('donation_request_id')->unsigned();
+			$table->timestamps();
 		});
 	}
 

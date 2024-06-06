@@ -2,6 +2,8 @@
 
 use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
+use Illuminate\Support\Facades\Schema;
+
 
 class CreateSettingsTable extends Migration {
 
@@ -9,7 +11,6 @@ class CreateSettingsTable extends Migration {
 	{
 		Schema::create('settings', function(Blueprint $table) {
 			$table->increments('id');
-			$table->timestamps();
 			$table->longText('notification_settings_text');
 			$table->longText('about');
 			$table->string('phone');
@@ -19,6 +20,7 @@ class CreateSettingsTable extends Migration {
 			$table->string('tw_link');
 			$table->string('youtube_link');
 			$table->string('whatup_link');
+			$table->timestamps();
 		});
 	}
 
